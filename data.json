@@ -1,0 +1,63 @@
+
+{ "products" : [ 
+    {
+   "id": 1,
+   "name": "Publisher A",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-a-subjects"
+ },
+ {
+   "id": 2,
+   "name": "Publisher B",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-b-subjects"
+ },
+ {
+   "id": 3,
+   "name": "Publisher C",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-c-subjects"
+ },
+ {
+   "id": 4,
+   "name": "Publisher D",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-d-subjects"
+ },
+ {
+   "id": 5,
+   "name": "Publisher E",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-e-subjects"
+ },
+ {
+   "id": 6,
+   "name": "Publisher F",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-f-subjects"
+ },
+ {
+   "id": 7,
+   "name": "Publisher G",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-g-subjects"
+ },
+ {
+   "id": 8,
+   "name": "Publisher H",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-h-subjects"
+ },
+ {
+   "id": 9,
+   "name": "Publisher I",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-i-subjects"
+ },
+ {
+   "id": 10,
+   "name": "Publisher J",
+   "logoImageUrl": "https://via.placeholder.com/150",
+   "path":"publisher-j-subjects"
+ }
+]}
