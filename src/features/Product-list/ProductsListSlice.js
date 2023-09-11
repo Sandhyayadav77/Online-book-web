@@ -1,31 +1,23 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchAllProducts } from './ProductsListAPI';
+import { fetchAllPublsihers } from './ProductsListAPI';
 
 const initialState = {
-  products: [],
+  publishers: [],
   status: 'idle',
 };
-export const fetchAllProductsAsync = createAsyncThunk(
-  'product/fetchAllProducts',
+export const fetchAllPublsihersAsync = createAsyncThunk(
+  'publisher/fetchAllPublishers',
   async () => {
-    try {
-      const response = await fetchAllProducts();
-      console.log(response.data);
-      if (!response.ok) {
-        throw new Error(`Request failed with status: ${response.status}`);
-      }
-      const data = await response.json(); // Add await here
-      return data; // Return the data
-    } catch (error) {
-      console.log(error);
-      throw error; // Rethrow the error to be captured by Redux Toolkit
-    }
+    const response = await fetchAllPublsihers()
+    // console.log(response)
+    return response;
+
   }
 );
 
 
-export const productSlice= createSlice({
-  name: 'product',
+export const publisherSlice = createSlice({
+  name: 'publisher',
   initialState,
 
   reducers: {
@@ -36,19 +28,18 @@ export const productSlice= createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllProductsAsync.pending, (state) => {
+      .addCase(fetchAllPublsihersAsync.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchAllProductsAsync.fulfilled, (state, action) => {
+      .addCase(fetchAllPublsihersAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.products = action.payload.data;
+        state.publishers = action.payload.data;
       });
   },
 });
 
-export const { increment } = productSlice.actions;
+export const { increment } = publisherSlice.actions;
 
+export const selectAllPublishers = (state) => state.publisher.publishers;
 
-export const selectAllProducts = (state) => state.product.products;
-
-export default productSlice.reducer;
+export default publisherSlice.reducer;

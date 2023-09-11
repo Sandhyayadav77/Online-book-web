@@ -1,46 +1,50 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCount } from './ParticularPublicationAPI';
+import { fetchSubjectsForPublisherAPI } from './ParticularPublicationAPI';
+
 
 const initialState = {
-  value: 0,
+  subjects: [], // Initialize subjects as an empty array
   status: 'idle',
+  error: null,
 };
 
-
-export const incrementAsync = createAsyncThunk(
-  'counter/fetchCount',
-  async (amount) => {
-    const response = await fetchCount(amount);
-    // The value we return becomes the `fulfilled` action payload
-    return response.data;
+export const fetchSubjectsForPublisher = createAsyncThunk(
+  'publication/fetchSubjectsForPublisher',
+  async (publisherId) => {
+    try {
+      const response = await fetchSubjectsForPublisherAPI(publisherId);
+      // console.log(response.data);
+      return response.data.subjects;
+      // Assuming that fetchSubjectsForPublisherAPI returns an array of subjects
+    } catch (error) {
+      throw new Error('Failed to fetch subjects for the publisher');
+    }
   }
 );
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const particularPublicationSlice = createSlice({
+  name: 'publication',
   initialState,
-
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    }
-  },
-
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(fetchSubjectsForPublisher.pending, (state) => {
         state.status = 'loading';
+        state.error = null;
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.value += action.payload;
+      .addCase(fetchSubjectsForPublisher.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.subjects = action.payload;
+      })
+      .addCase(fetchSubjectsForPublisher.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
       });
   },
 });
 
-export const { increment } = counterSlice.actions;
+export const selectSubjects = (state) => state.particularPublication.subjects;
+export const selectPublicationStatus = (state) => state.particularPublication.status;
+export const selectPublicationError = (state) => state.particularPublication.error;
 
-
-export const selectCount = (state) => state.counter.value;
-
-export default counterSlice.reducer;
+export default particularPublicationSlice.reducer;

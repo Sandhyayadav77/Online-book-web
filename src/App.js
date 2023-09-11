@@ -21,9 +21,9 @@ function App() {
           <Route path="signup" exact element={<SignUpPage />} />
           <Route path="cart" exact element={<CartPage />} />
           <Route path="login" exact element={<LoginPage />} />
-          <Route path="publishers/:publisherName" exact element={<ParticularPublicationPage />} />
+          <Route path="publishers/:publisherName/:id" exact element={<ParticularPublicationPage />} />
           <Route path="checkout" exact element={<CheckOutPage />} />
-          <Route path="Class" exact element={<ByClassPage />} />
+          <Route path="/class/:publisherName/:id/:subjectName" exact element={ <ByClassPage />}/>
           <Route path="product-details" exact element={<ProductetailsPage />} />
         </Routes>
       </BrowserRouter>

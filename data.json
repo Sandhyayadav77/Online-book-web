@@ -1,63 +1,4345 @@
-
-{ "products" : [ 
+{
+  "publishers": [
     {
-   "id": 1,
-   "name": "Publisher A",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-a-subjects"
- },
- {
-   "id": 2,
-   "name": "Publisher B",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-b-subjects"
- },
- {
-   "id": 3,
-   "name": "Publisher C",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-c-subjects"
- },
- {
-   "id": 4,
-   "name": "Publisher D",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-d-subjects"
- },
- {
-   "id": 5,
-   "name": "Publisher E",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-e-subjects"
- },
- {
-   "id": 6,
-   "name": "Publisher F",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-f-subjects"
- },
- {
-   "id": 7,
-   "name": "Publisher G",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-g-subjects"
- },
- {
-   "id": 8,
-   "name": "Publisher H",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-h-subjects"
- },
- {
-   "id": 9,
-   "name": "Publisher I",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-i-subjects"
- },
- {
-   "id": 10,
-   "name": "Publisher J",
-   "logoImageUrl": "https://via.placeholder.com/150",
-   "path":"publisher-j-subjects"
- }
-]}
+      "id": 1,
+      "name": "Publisher A",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Publisher B",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Publisher C",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Publisher D",
+      "logoImageUrl": "https://via.placeholder.com/150",
+
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Publisher E",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Publisher F",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Publisher G",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Publisher H",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Publisher I",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Publisher J",
+      "logoImageUrl": "https://via.placeholder.com/150",
+      "subjects": [
+        {
+          "name": "English",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "English Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "English Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "English Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "English Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "English Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "English Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "English Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "English Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hindi",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Hindi Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Hindi Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Hindi Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Hindi Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Hindi Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Hindi Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Hindi Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Mathematics Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Mathematics Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Mathematics Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Mathematics Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Mathematics Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Mathematics Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Mathematics Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Mathematics Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "Science Book for Class 1",
+                "price": "$20"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "Science Book for Class 2",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "Science Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "Science Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "Science Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "Science Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "Science Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "Science Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SST (Social Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "SST Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "SST Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "SST Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "SST Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "SST Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "SST Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "SST Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GK (General Knowledge)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "GK Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "GK Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "GK Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "GK Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "GK Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "GK Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "GK Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "GK Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        },
+        {
+          "name": "EVS (Environmental Studies)",
+          "classes": [
+            {
+              "class": "Class 1",
+              "book": {
+                "title": "EVS Book for Class 1",
+                "price": "$18"
+              }
+            },
+            {
+              "class": "Class 2",
+              "book": {
+                "title": "EVS Book for Class 2",
+                "price": "$22"
+              }
+            },
+            {
+              "class": "Class 3",
+              "book": {
+                "title": "EVS Book for Class 3",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 4",
+              "book": {
+                "title": "EVS Book for Class 4",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 5",
+              "book": {
+                "title": "EVS Book for Class 5",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 6",
+              "book": {
+                "title": "EVS Book for Class 6",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 7",
+              "book": {
+                "title": "EVS Book for Class 7",
+                "price": "$25"
+              }
+            },
+            {
+              "class": "Class 8",
+              "book": {
+                "title": "EVS Book for Class 8",
+                "price": "$25"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

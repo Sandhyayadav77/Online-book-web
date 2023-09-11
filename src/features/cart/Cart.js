@@ -2,11 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import {
-  increment,
-  incrementAsync,
-  selectCount,
-} from './CartSlice';
+
 import { Link } from 'react-router-dom';
 
 
@@ -70,7 +66,6 @@ const products = [
 ]
 
 export function Cart() {
-  const count = useSelector(selectCount);
   const dispatch = useDispatch();
 
   const [open, setOpen] = useState(true)

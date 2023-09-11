@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
-import { selectAllProducts, fetchAllProductsAsync } from './ProductsListSlice'
+import { selectAllPublishers, fetchAllPublsihersAsync } from './ProductsListSlice'
 
 import { Link, useNavigate } from 'react-router-dom';
 // import products from '../../ecom data/publishers.json'
@@ -128,13 +128,14 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function ProductsList() {
   const dispatch = useDispatch();
-  const products = useSelector(selectAllProducts);
-  console.log(products);
+  const publishers = useSelector(selectAllPublishers);
+  const navigate= useNavigate()
+  // console.log(publishers);
   useEffect(() => {
-    dispatch(fetchAllProductsAsync());
+    dispatch(fetchAllPublsihersAsync());
   }, [dispatch]);
 
-  if (products.status === 'loading') {
+  if (publishers.status === 'loading') {
     return <div>Loading...</div>;
   }
   return (
@@ -143,23 +144,23 @@ export default function ProductsList() {
         <div className="mx-auto max-w-2xl px-4 py-7 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="text-3xl mb-10 text-center font-bold">Publication Houses</h2>
 
-          <div className="publisher-list grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> 
-            {products.map((product) => (
-              <Link key={product.id}
-                to={`/publishers/${product.path}`}
+          <div className="publisher-list grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            {publishers.map((publisher) => (
+              <Link key={publisher.id}
+                to={`/publishers/${encodeURIComponent(publisher.name)}/${encodeURIComponent(publisher.id)}`}
                 // to='/ParticularPublication'
                 // onClick={() => {
-                // navigate(`/publishers/${product.path}`);
+                // navigate(`/publishers/${publisher.name}`);
                 // }}
                 className="publisher-card">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                   <img
-                    src={product.logoImageUrl}
-                    alt={product.imageAlt}
+                    src={publisher.logoImageUrl}
+                    // alt={publisher.imageAlt}
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
-                <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
+                <h3 className="mt-4 text-sm text-gray-700">{publisher.name}</h3>
                 {/* <p className="mt-1 text-lg font-medium text-gray-900">{product.rating}</p> */}
               </Link>
             ))}
@@ -171,7 +172,7 @@ export default function ProductsList() {
         <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-9 sm:px-6">
           <div className="flex flex-1 justify-between sm:hidden mx-auto">
             <a
-              href="#"
+              href="/"
               className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
               Previous

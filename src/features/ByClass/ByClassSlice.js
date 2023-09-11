@@ -1,46 +1,40 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCount } from './ByClassAPI';
-
-const initialState = {
-  value: 0,
-  status: 'idle',
-};
+import { fetchClassesForSubjectAPI } from './ByClassAPI';
 
 
-export const incrementAsync = createAsyncThunk(
-  'counter/fetchCount',
-  async (amount) => {
-    const response = await fetchCount(amount);
+export const fetchClassforSubjectsAsync = createAsyncThunk(
+  'subjectClasses/fetchClasses',
+  async (params) => {
+    const { publisherId, publisherName, subjectName } = params;
+    const response = await fetchClassesForSubjectAPI(publisherName, publisherId, subjectName);
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    // console.log("params", publisherId, publisherName, subjectName)
+    // console.log(response);
+    return response.classes;
   }
 );
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
-
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    }
+export const ClassForSubjectsSlice = createSlice({
+  name: 'subjectClasses',
+  initialState: {
+    status: 'idle',
+    classes: [], // Store the fetched classes
   },
+
+  reducers: {},
 
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(fetchClassforSubjectsAsync.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      .addCase(fetchClassforSubjectsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.value += action.payload;
+        state.classes = action.payload; // Store the fetched classes
       });
   },
 });
 
-export const { increment } = counterSlice.actions;
+export const selectClassesForSubject = (state) => state.ClassForSubject.classes;
 
-
-export const selectCount = (state) => state.counter.value;
-
-export default counterSlice.reducer;
+export default ClassForSubjectsSlice.reducer;

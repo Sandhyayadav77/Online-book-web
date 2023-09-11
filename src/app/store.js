@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import productReducer from '../features/Product-list/ProductsListSlice';
+import publisherReducer from '../features/Product-list/ProductsListSlice';
+import  particularPublicationReducer from '../features/ParticularPublication/ParticularPublicationSlice';
+import  ClassForSubjectReducer from '../features/ByClass/ByClassSlice'
 
 export const store = configureStore({
   reducer: {
-    product: productReducer,
+    publisher: publisherReducer,
+    particularPublication: particularPublicationReducer,   
+    ClassForSubject: ClassForSubjectReducer,
   },
 });
