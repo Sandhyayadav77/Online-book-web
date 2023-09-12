@@ -1,46 +1,47 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCount } from './ProductDetailsAPI';
+import { fetchProductDetails } from './ProductDetailsAPI';
 
 const initialState = {
-  value: 0,
+  productDetailsValue: {},
   status: 'idle',
 };
 
-
-export const incrementAsync = createAsyncThunk(
-  'counter/fetchCount',
-  async (amount) => {
-    const response = await fetchCount(amount);
-    // The value we return becomes the `fulfilled` action payload
-    return response.data;
+export const fetchProductDetailsAsync = createAsyncThunk(
+  'productDetails/fetchProductDetails',
+  async ({ id, publisherName, subjectName, className }) => {
+    // console.log(id, publisherName, subjectName, className)
+    try {
+      const response = await fetchProductDetails({ id, publisherName, subjectName, className });
+      return response
+    } catch (error) {
+      console.error('Error fetching product details:', error);
+      throw error;
+    }
   }
 );
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const fetchProductDetailsSlice = createSlice({
+  name: 'productDetails',
   initialState,
 
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    }
-  },
+  reducers: {},
 
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(fetchProductDetailsAsync.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      .addCase(fetchProductDetailsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.value += action.payload;
+        state.productDetailsValue = action.payload;
       });
   },
 });
 
-export const { increment } = counterSlice.actions;
+// export const { increment } = counterSlice.actions;
 
 
-export const selectCount = (state) => state.counter.value;
+export const selectfetchProductDetails = (state) => state.productDetails.productDetailsValue;
 
-export default counterSlice.reducer;
+
+export default fetchProductDetailsSlice.reducer;

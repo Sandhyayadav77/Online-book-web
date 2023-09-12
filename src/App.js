@@ -23,8 +23,8 @@ function App() {
           <Route path="login" exact element={<LoginPage />} />
           <Route path="publishers/:publisherName/:id" exact element={<ParticularPublicationPage />} />
           <Route path="checkout" exact element={<CheckOutPage />} />
-          <Route path="/class/:publisherName/:id/:subjectName" exact element={ <ByClassPage />}/>
-          <Route path="product-details" exact element={<ProductetailsPage />} />
+          <Route path="/class-category/:publisherName/:id/:subjectName" exact element={ <ByClassPage />}/>
+          <Route path="/product-details/:publisherName/:id/:subjectName/:className" exact element={<ProductetailsPage />} />
         </Routes>
       </BrowserRouter>
     </>

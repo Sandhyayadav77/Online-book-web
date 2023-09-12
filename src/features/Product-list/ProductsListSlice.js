@@ -20,11 +20,7 @@ export const publisherSlice = createSlice({
   name: 'publisher',
   initialState,
 
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    }
-  },
+  reducers: {  },
 
   extraReducers: (builder) => {
     builder

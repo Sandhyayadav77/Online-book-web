@@ -126,7 +126,7 @@ export function ParticularPublication() {
                 <div className="mt-4 flex justify-between">
                 <div>
                     <h3 className="text-sm text-gray-700">
-                      <Link to={`/class/${publisherName}/${id}/${subject.name}`}>
+                      <Link to={`/class-category/${publisherName}/${id}/${subject.name}`}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {subject.name}
                       </Link>
