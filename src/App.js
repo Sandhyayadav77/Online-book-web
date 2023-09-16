@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Home from './Pages/Home';
 import LoginPage from './Pages/LoginPage';
 import SignUpPage from './Pages/SignUpPage';
@@ -9,22 +9,33 @@ import CheckOutPage from './Pages/CheckOutPage';
 import ByClassPage from './Pages/ByClassPage';
 import ProductetailsPage from './Pages/ProductetailsPage';
 import Navbar from './features/Navbar/Navbar';
-
+import Protected from './features/auth/Components/Protected';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectLoggedInUser } from './features/auth/authSlice';
+import { fetchItemByUserIdAsync } from './features/cart/CartSlice';
 
 function App() {
+  const user = useSelector(selectLoggedInUser)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if (user) {
+      dispatch(fetchItemByUserIdAsync(user))
+    }
+  }, [dispatch, user])
+
   return (
     <>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Protected><Home /></Protected>} />
           <Route path="signup" exact element={<SignUpPage />} />
-          <Route path="cart" exact element={<CartPage />} />
+          <Route path="cart" exact element={<Protected><CartPage /></Protected>} />
           <Route path="login" exact element={<LoginPage />} />
-          <Route path="publishers/:publisherName/:id" exact element={<ParticularPublicationPage />} />
-          <Route path="checkout" exact element={<CheckOutPage />} />
-          <Route path="/class-category/:publisherName/:id/:subjectName" exact element={ <ByClassPage />}/>
-          <Route path="/product-details/:publisherName/:id/:subjectName/:className" exact element={<ProductetailsPage />} />
+          <Route path="publishers/:publisherName/:id" exact element={<Protected><ParticularPublicationPage /></Protected>} />
+          <Route path="checkout" exact element={<Protected><CheckOutPage /></Protected>} />
+          <Route path="/class-category/:publisherName/:id/:subjectName" exact element={<Protected><ByClassPage /></Protected>} />
+          <Route path="/product-details/:publisherName/:id/:subjectName/:className" exact element={<Protected><ProductetailsPage /></Protected>} />
         </Routes>
       </BrowserRouter>
     </>

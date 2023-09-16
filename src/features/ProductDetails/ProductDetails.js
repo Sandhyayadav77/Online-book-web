@@ -7,6 +7,8 @@ import {
   selectfetchProductDetails,
 } from './ProductDetailsSlice';
 import { useParams } from 'react-router-dom';
+import { addToCartAsync } from '../cart/CartSlice';
+import { selectLoggedInUser } from '../auth/authSlice'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -70,13 +72,37 @@ export function ProductDetails() {
   const { publisherName, id, subjectName, className } = useParams()
   const ProductDetails = useSelector(selectfetchProductDetails);
   const dispatch = useDispatch();
+  const user = useSelector(selectLoggedInUser)
+  console.log(user)
   useEffect(() => {
     dispatch(fetchProductDetailsAsync({ id, publisherName, subjectName, className }))
   }, [id, publisherName, subjectName, className]);
   console.log(ProductDetails)
   // const price = ProductDetails.classDetails.book.price;
   // console.log(price);
-
+  const handleCart = async (e) => {
+    try {
+      e.preventDefault();
+      const cartItem = {
+        productDetails: ProductDetails, // Replace with the actual product details
+        publisherName,
+        publisherId: id,
+        subjectName,
+        className,
+        quantity: 1,
+        userId: user.data.id,
+      };
+      // Add item to the cart here
+      dispatch(addToCartAsync(cartItem));
+    
+    console.log('Item added to cart:', cartItem);
+  } catch (error) {
+    console.error("An error occurred while adding to the cart:", error);
+    // Handle the error gracefully, e.g., show an error message
+      // Handle the error gracefully, e.g., show an error message
+    }
+  };
+  
   return (
     <>
       <div className="bg-white">
@@ -110,8 +136,8 @@ export function ProductDetails() {
             </ol>
           </nav> */}
           <p className="text-3xl tracking-tight text-gray-900 px-11">
-                {ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.title}
-              </p>
+            {ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.title}
+          </p>
           {/* Image gallery */}
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
@@ -124,14 +150,14 @@ export function ProductDetails() {
             <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
               <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                 <img
-                src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[1]}
+                  src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[1]}
                   // alt={product.images[1].alt}
                   className="h-full w-full object-cover object-center"
                 />
               </div>
               <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                 <img
-                   src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[2]}
+                  src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[2]}
                   // alt={product.images[2].alt}
                   className="h-full w-full object-cover object-center"
                 />
@@ -139,7 +165,7 @@ export function ProductDetails() {
             </div>
             <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
               <img
-              src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[3]}
+                src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[3]}
                 // alt={product.images[3].alt}
                 className="h-full w-full object-cover object-center"
               />
@@ -187,6 +213,7 @@ export function ProductDetails() {
 
 
                 <button
+                  onClick={(event)=>handleCart(event)}
                   type="submit"
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >

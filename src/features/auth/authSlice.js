@@ -1,46 +1,70 @@
-// import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import { CreateUser } from './authAPI';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { CreateUser , checkUser } from './authAPI';
 
-// const initialState = {
-//   value: 0,
-//   status: 'idle',
-// };
-
-
-// export const incrementAsync = createAsyncThunk(
-//   'counter/fetchCount',
-//   async (amount) => {
-//     const response = await fetchCount(amount);
-//     // The value we return becomes the `fulfilled` action payload
-//     return response.data;
-//   }
-// );
-
-// export const counterSlice = createSlice({
-//   name: 'counter',
-//   initialState,
-
-//   reducers: {
-//     increment: (state) => {
-//       state.value += 1;
-//     }
-//   },
-
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(incrementAsync.pending, (state) => {
-//         state.status = 'loading';
-//       })
-//       .addCase(incrementAsync.fulfilled, (state, action) => {
-//         state.status = 'idle';
-//         state.value += action.payload;
-//       });
-//   },
-// });
-
-// export const { increment } = counterSlice.actions;
+const initialState = {
+  loggedInUser: 0,
+  status: 'idle',
+  error:null
+};
 
 
-// export const selectCount = (state) => state.counter.value;
+export const CreateUserAsync = createAsyncThunk(
+  'user/createUser',
+  async (userData) => {
+    const response =CreateUser (userData);
+    // The value we return becomes the `fulfilled` action payload
+    return response;
+  }
+);
 
-// export default counterSlice.reducer;
+export const  checkUserAsync = createAsyncThunk(
+  'user/checkUser',
+  async (loginInfo) => {
+    const response = checkUser (loginInfo);
+    // The value we return becomes the `fulfilled` action payload
+    return response;
+  }
+);
+
+export const CreateUserSlice = createSlice({
+  name: 'user',
+  initialState,
+
+  reducers: {
+  //   setError: (state, action) => {
+  //     state.error = action.payload;
+  // }
+},
+
+  extraReducers: (builder) => {
+    builder
+      .addCase(CreateUserAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(CreateUserAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.loggedInUser=action.payload;
+      })
+      .addCase(checkUserAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(checkUserAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.loggedInUser = action.payload;
+      })
+      .addCase(checkUserAsync.rejected, (state, action) => {
+        state.status = 'idle';
+        state.error = action.error;
+      });
+  
+  },
+});
+
+
+
+// export const { setError } = CreateUserSlice.actions; 
+
+export const selectLoggedInUser= (state) => state.auth.loggedInUser;
+export const selectError= (state) => state.auth.error;
+
+export default CreateUserSlice.reducer;
