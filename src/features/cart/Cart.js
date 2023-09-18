@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-import { Link } from 'react-router-dom';
-import { selectItems, updateCartAsync } from './CartSlice';
+import { Link, Navigate } from 'react-router-dom';
+import { deleteItemFromCartAsync, selectItems, updateCartAsync } from './CartSlice';
 
 
 
@@ -12,20 +12,24 @@ import { selectItems, updateCartAsync } from './CartSlice';
 
 export function Cart() {
   const dispatch = useDispatch();
-  const items= useSelector(selectItems)
-  console.log(items)
+  const items = useSelector(selectItems)
+  // console.log(items)
   const [open, setOpen] = useState(true)
- const totalAmount = items.reduce((amount, item) => {
-  const price = parseFloat(item.productDetails.classDetails.book.price.replace(/[^0-9.]/g, ''));
-  return price * item.quantity + amount;
-}, 0);
-  const totalItems= items.reduce((total, item)=> item.quantity + total,0)
-  const handleQuantity = (e, item)=>{
-dispatch(updateCartAsync({...item, quantity:+e.target.value}))
+  const totalAmount = items.reduce((amount, item) => {
+    const price = parseFloat(item?.productDetails?.classDetails?.book?.price.replace(/[^0-9.]/g, ''));
+    return price * item.quantity + amount;
+  }, 0);
+  const totalItems = items.reduce((total, item) => item.quantity + total, 0)
+  const handleQuantity = (e, item) => {
+    dispatch(updateCartAsync({ ...item, quantity: +e.target.value }))
   }
-  
+  const handleRemove=( e, itemId)=>{
+    dispatch(deleteItemFromCartAsync(itemId))
+  }
+
   return (
     <>
+    {!items.length && <Navigate to='/' replace={true}></Navigate>  }
       <div className="mx-auto max-w-screen px-6 lg:px-8 my-4  ">
 
         <div className="flex h-full flex-col  bg-white shadow-xl">
@@ -42,7 +46,7 @@ dispatch(updateCartAsync({...item, quantity:+e.target.value}))
                     <li key={item.id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         <img
-                          src={item.productDetails.classDetails.book.images[2]}
+                          src={item?.productDetails?.classDetails?.book?.images[2]}
                           // alt={product.imageAlt}
                           className="h-full w-full object-cover object-center"
                         />
@@ -56,14 +60,14 @@ dispatch(updateCartAsync({...item, quantity:+e.target.value}))
                               <p href={item.href}>{item.className}</p>
                               <p>{item.publisherName}</p>
                             </h3>
-                            <p className="ml-4">{item && item.productDetails && item.productDetails.classDetails.book && item.productDetails.classDetails.book.price}</p>
+                            <p className="ml-4">{item?.productDetails?.classDetails?.book?.price}</p>
                           </div>
-                          <p className="mt-1 text-sm text-gray-500">{item.productDetails.classDetails.book.title}</p>
+                          <p className="mt-1 text-sm text-gray-500">{item?.productDetails?.classDetails?.book?.title}</p>
                         </div>
                         <div className="flex flex-1 items-end justify-between text-sm">
 
                           <label className='text-gray-500' htmlFor="qty">Qty </label>
-                          <select onChange={(e)=>handleQuantity(e,item)} className="py-2 px-1 border  border-gray-200 mr-6 focus:outline-none">
+                          <select onChange={(e) => handleQuantity(e, item)} value={item.quantity} className="py-2 px-1 border  border-gray-200 mr-6 focus:outline-none">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -76,6 +80,7 @@ dispatch(updateCartAsync({...item, quantity:+e.target.value}))
 
                           <div className="flex">
                             <button
+                              onClick={(e) => handleRemove(e, item.id)}
                               type="button"
                               className="font-medium text-indigo-600 hover:text-indigo-500"
                             >
@@ -117,8 +122,8 @@ dispatch(updateCartAsync({...item, quantity:+e.target.value}))
                     type="button"
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                     onClick={() => setOpen(false)}
-                  > 
-                     &nbsp; Continue Shopping
+                  >
+                    &nbsp; Continue Shopping
                     <span aria-hidden="true"> &rarr;</span>
                   </button>
                 </Link>

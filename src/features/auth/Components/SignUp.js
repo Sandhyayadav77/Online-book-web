@@ -19,7 +19,7 @@ export const SignUp = memo(() => {
     } = useForm();
 
     const onSubmit = (data) => {
-        dispatch(CreateUserAsync({ name: data.name, email: data.email, phone: data.phone, school_Name: data.schoolName, password: data.password }))
+        dispatch(CreateUserAsync({ name: data.name, email: data.email, phone: data.phone, school_Name: data.schoolName, password: data.password , addresses:[]}))
         console.log(data);
     };
     console.log(errors)

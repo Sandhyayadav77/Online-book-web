@@ -92,6 +92,7 @@ export function ProductDetails() {
         quantity: 1,
         userId: user.data.id,
       };
+      delete cartItem['id'];
       // Add item to the cart here
       dispatch(addToCartAsync(cartItem));
     
