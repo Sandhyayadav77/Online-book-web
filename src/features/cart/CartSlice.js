@@ -91,7 +91,11 @@ export const addToCartSlice = createSlice({
       })
       .addCase(updateCartAsync.fulfilled, (state, action) => {
         state.status = 'idle';
+<<<<<<< Updated upstream
      const index= state.items.findIndex((item=>item.id===action.payload.id))
+=======
+      const index= state.items.findIndex((item=>item.id == action.payload.id))
+>>>>>>> Stashed changes
         state.items[index]=action.payload;
       }).addCase(deleteItemFromCartAsync.pending, (state) => {
         state.status = 'loading';
