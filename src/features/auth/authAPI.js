@@ -9,7 +9,8 @@ export  function CreateUser(userData) {
     });
     const data = await response.json()
     // on server it will return only relevant information 
-    resolve({data})
+  resolve({data})
+// console.log(data)
   } )
 }
 

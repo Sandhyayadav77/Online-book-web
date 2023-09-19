@@ -8216,7 +8216,6 @@
       "school_Name": "demo public school",
       "password": "Demo@123",
       "addresses": [
-       
         {
           "name": "demo",
           "email": "demo@gmail.com",
@@ -8225,9 +8224,27 @@
           "city": "New Delhi",
           "state": "Delhi",
           "pincode": "110000"
+        },
+        {
+          "name": "demo",
+          "email": "demo@gmail.com",
+          "phone": "1234567890",
+          "street": "near market",
+          "city": "New delhi",
+          "state": "Delhi",
+          "pincode": "110002"
         }
       ],
       "id": 3
+    },
+    {
+      "name": "david",
+      "email": "test@testgmail.com",
+      "phone": "1234123455",
+      "school_Name": "davbs",
+      "password": "David@1234",
+      "addresses": [],
+      "id": 4
     }
   ],
   "cart": [
@@ -8277,7 +8294,7 @@
       "publisherId": "1",
       "subjectName": "Hindi",
       "className": "Class-1",
-      "quantity": 1,
+      "quantity": 2,
       "userId": 2,
       "id": 8
     },
@@ -8327,9 +8344,129 @@
       "publisherId": "2",
       "subjectName": "Hindi",
       "className": "Class-2",
-      "quantity": 1,
+      "quantity": 2,
       "userId": 3,
       "id": 12
+    },
+    {
+      "productDetails": {
+        "classDetails": {
+          "class": "Class 2",
+          "book": {
+            "title": "SST Book for Class 2",
+            "images": [
+              "https://i.dummyjson.com/data/products/1/1.jpg",
+              "https://i.dummyjson.com/data/products/1/2.jpg",
+              "https://i.dummyjson.com/data/products/1/3.jpg",
+              "https://i.dummyjson.com/data/products/1/4.jpg",
+              "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+            ],
+            "price": "$22"
+          }
+        }
+      },
+      "publisherName": "Publisher D",
+      "publisherId": "4",
+      "subjectName": "SST (Social Studies)",
+      "className": "Class-2",
+      "quantity": 1,
+      "userId": 3,
+      "id": 13
+    }
+  ],
+  "orders": [
+    {
+      "items": [
+        {
+          "productDetails": {
+            "classDetails": {
+              "class": "Class 2",
+              "book": {
+                "title": "Hindi Book for Class 2",
+                "images": [
+                  "https://i.dummyjson.com/data/products/1/1.jpg",
+                  "https://i.dummyjson.com/data/products/1/2.jpg",
+                  "https://i.dummyjson.com/data/products/1/3.jpg",
+                  "https://i.dummyjson.com/data/products/1/4.jpg",
+                  "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+                ],
+                "price": "$22"
+              }
+            }
+          },
+          "publisherName": "Publisher B",
+          "publisherId": "2",
+          "subjectName": "Hindi",
+          "className": "Class-2",
+          "quantity": 2,
+          "userId": 3,
+          "id": 12
+        },
+        {
+          "productDetails": {
+            "classDetails": {
+              "class": "Class 2",
+              "book": {
+                "title": "SST Book for Class 2",
+                "images": [
+                  "https://i.dummyjson.com/data/products/1/1.jpg",
+                  "https://i.dummyjson.com/data/products/1/2.jpg",
+                  "https://i.dummyjson.com/data/products/1/3.jpg",
+                  "https://i.dummyjson.com/data/products/1/4.jpg",
+                  "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+                ],
+                "price": "$22"
+              }
+            }
+          },
+          "publisherName": "Publisher D",
+          "publisherId": "4",
+          "subjectName": "SST (Social Studies)",
+          "className": "Class-2",
+          "quantity": 1,
+          "userId": 3,
+          "id": 13
+        }
+      ],
+      "totalAmount": 66,
+      "totalItems": 3,
+      "name": "demo",
+      "email": "demo@gmail.com",
+      "phone": "1212121212",
+      "school_Name": "demo public school",
+      "password": "Demo@123",
+      "addresses": [
+        {
+          "name": "demo",
+          "email": "demo@gmail.com",
+          "phone": "1234546789",
+          "street": "chuahan mohalla",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "pincode": "110000"
+        },
+        {
+          "name": "demo",
+          "email": "demo@gmail.com",
+          "phone": "1234567890",
+          "street": "near market",
+          "city": "New delhi",
+          "state": "Delhi",
+          "pincode": "110002"
+        }
+      ],
+      "id": 3,
+      "paymentMethod": "cash",
+      "selectAddress": {
+        "name": "demo",
+        "email": "demo@gmail.com",
+        "phone": "1234567890",
+        "street": "near market",
+        "city": "New delhi",
+        "state": "Delhi",
+        "pincode": "110002"
+      },
+      "status": "pending"
     }
   ]
 }

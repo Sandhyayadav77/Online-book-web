@@ -13,6 +13,8 @@ import Protected from './features/auth/Components/Protected';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLoggedInUser } from './features/auth/authSlice';
 import { fetchItemByUserIdAsync } from './features/cart/CartSlice';
+import PageNotFound from './Pages/404';
+import OrderSuccessPage from './Pages/OrderSuccessPage';
 
 function App() {
   const user = useSelector(selectLoggedInUser)
@@ -32,10 +34,12 @@ function App() {
           <Route path="signup" exact element={<SignUpPage />} />
           <Route path="cart" exact element={<Protected><CartPage /></Protected>} />
           <Route path="login" exact element={<LoginPage />} />
+          <Route path="/order-success/:id" exact element={<OrderSuccessPage/>} />
           <Route path="publishers/:publisherName/:id" exact element={<Protected><ParticularPublicationPage /></Protected>} />
           <Route path="checkout" exact element={<Protected><CheckOutPage /></Protected>} />
           <Route path="/class-category/:publisherName/:id/:subjectName" exact element={<Protected><ByClassPage /></Protected>} />
           <Route path="/product-details/:publisherName/:id/:subjectName/:className" exact element={<Protected><ProductetailsPage /></Protected>} />
+          <Route path="*"  element={<PageNotFound/>} />
         </Routes>
       </BrowserRouter>
     </>

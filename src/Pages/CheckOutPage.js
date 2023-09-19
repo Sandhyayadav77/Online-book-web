@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useForm, SubmitHandler } from "react-hook-form"
 import { selectLoggedInUser, updateUserAsync } from '../features/auth/authSlice';
+import { createOrderAsync, selectCurrentOrder } from '../features/Order/orderSlice';
 
 
 const products = [
@@ -66,15 +67,20 @@ const products = [
 ]
 
 const CheckOutPage = () => {
+    const [selectAddress, setSelectAddress] = useState(null);
+    const [paymentMethod, setPaymentMethod] = useState('cash');
     const user = useSelector(selectLoggedInUser)
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
     const dispatch = useDispatch();
     const items = useSelector(selectItems);
+    const currentOrder = useSelector(selectCurrentOrder)
+    console.log(currentOrder)
     const [open, setOpen] = useState(true)
 
     const totalAmount = items.reduce((amount, item) => {
@@ -92,10 +98,38 @@ const CheckOutPage = () => {
        
         console.log(data);
         dispatch(updateUserAsync({...user.data, addresses:[...user.data.addresses, data]}))
+        reset();
     };
+    const handleAddress=(e)=>{
+        console.log(e.target.value)
+        setSelectAddress(user.data.addresses[e.target.value]);
+        // console.log(selectAddress)
+    }
+    const handlePayment=(e)=>{
+        console.log(e.target.value)
+        setPaymentMethod(e.target.value);
+        // console.log(selectAddress)
+    }
+    const handleOrder = (e)=>{
+      if(selectAddress && paymentMethod) {
+        const order = {items, 
+            totalAmount, 
+            totalItems, 
+            ...user.data,
+             paymentMethod, 
+             selectAddress,
+            status:'pending'};
+       dispatch(createOrderAsync(order));
+    //    TODO Redirection to success page
+    // clear cart after order
+      }else{
+          alert("Enter Address and Payment Method")
+      }
+    }
     return (
         <>
             {!items.length && <Navigate to='/' replace={true}></Navigate>}
+            {currentOrder && <Navigate to={`/order-success/${currentOrder.id}`} replace={true}></Navigate>}
             <div className='bg-white grid grid-cols-1 lg:grid-cols-5 gap-x-8 gap-y-10'>
                 <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-8 lg:max-w-7xl lg:px-8 lg:col-span-3">
                     <form noValidate onSubmit={handleSubmit(onSubmit)}>
@@ -250,9 +284,11 @@ const CheckOutPage = () => {
                                     <li key={index} htmlFor={address.pincode} className="flex justify-between gap-x-6 py-5 px-2 rounded-sm">
                                         <div className="flex min-w-0 gap-x-4">
                                             <input
+                                            onChange={handleAddress}
                                                 id={address.pincode}
                                                 name="address"
                                                 type="radio"
+                                                value={index}
                                                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                             />
                                             <div className="min-w-0 flex-auto ">
@@ -276,21 +312,14 @@ const CheckOutPage = () => {
                                     <legend className="text-sm font-semibold leading-6 text-gray-900">Payment Method</legend>
                                     <p className="mt-1 text-sm leading-6 text-gray-600">Choose One</p>
                                     <div className="mt-6 space-y-6">
-                                        <div className="flex items-center gap-x-3">
-                                            <input
-                                                id="creditCard"
-                                                name="paymemt"
-                                                type="radio"
-                                                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                            />
-                                            <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
-                                                Credit Card                                            </label>
-                                        </div>
-                                        <div className="flex items-center gap-x-3">
+                                    <div className="flex items-center gap-x-3">
                                             <input
                                                 id="cash"
-                                                name="paymemt"
+                                                name="paymemts"
+                                                onChange={handlePayment}
                                                 type="radio"
+                                                value='cash'
+                                                checked={paymentMethod==='cash'}
                                                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                             />
                                             <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -298,20 +327,32 @@ const CheckOutPage = () => {
                                         </div>
                                         <div className="flex items-center gap-x-3">
                                             <input
+                                                id="creditCard"
+                                                name="paymemts"
+                                                onChange={handlePayment}
+                                                type="radio"
+                                                value='card'
+                                                checked={paymentMethod==='card'}
+                                                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                            />
+                                            <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
+                                                Credit Card                                            </label>
+                                        </div>
+                                       
+                                        {/* <div className="flex items-center gap-x-3">
+                                            <input
                                                 id="upi"
-                                                name="paymemt"
+                                                name="paymemts"
                                                 type="radio"
                                                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                             />
                                             <label htmlFor="push-nothing" className="block text-sm font-medium leading-6 text-gray-900">
                                                 UPI Method                                            </label>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </fieldset>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
 
@@ -395,12 +436,12 @@ const CheckOutPage = () => {
                                 </div>
                                 <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                 <div className="mt-6">
-                                    <Link
-                                        to='/checkout'
-                                        className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                                    <div
+                                    onClick={handleOrder}
+                                        className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                                     >
-                                        Pay now
-                                    </Link>
+                                        Order now
+                                    </div>
                                 </div>
                                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                                     <p>
