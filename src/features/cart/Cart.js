@@ -15,15 +15,6 @@ export function Cart() {
   const items = useSelector(selectItems)
   // console.log(items)
   const [open, setOpen] = useState(true)
-<<<<<<< Updated upstream
-  const totalAmount = items.reduce((amount, item) => {
-    const price = parseFloat(item?.productDetails?.classDetails?.book?.price.replace(/[^0-9.]/g, ''));
-    return price * item.quantity + amount;
-  }, 0);
-  const totalItems = items.reduce((total, item) => item.quantity + total, 0)
-  const handleQuantity = (e, item) => {
-    dispatch(updateCartAsync({ ...item, quantity: +e.target.value }))
-=======
  const totalAmount = items.reduce((amount, item) => {
   // console.log(item)
   const price = parseFloat( item?.productDetails?.classDetails?.book?.price?.replace(/[^0-9.]/g, ''));
@@ -33,7 +24,6 @@ export function Cart() {
   const totalItems= items.reduce((total, item)=> item.quantity + total,0)
   const handleQuantity = (e, item)=>{
 dispatch(updateCartAsync({...item, quantity:+e.target.value}))
->>>>>>> Stashed changes
   }
   const handleRemove=( e, itemId)=>{
     dispatch(deleteItemFromCartAsync(itemId))
@@ -79,11 +69,8 @@ dispatch(updateCartAsync({...item, quantity:+e.target.value}))
                         <div className="flex flex-1 items-end justify-between text-sm">
 
                           <label className='text-gray-500' htmlFor="qty">Qty </label>
-<<<<<<< Updated upstream
-                          <select onChange={(e) => handleQuantity(e, item)} value={item.quantity} className="py-2 px-1 border  border-gray-200 mr-6 focus:outline-none">
-=======
+                        
                           <select onChange={(e)=>handleQuantity(e,item)} value={item.quantity} className="py-2 px-1 border  border-gray-200 mr-6 focus:outline-none">
->>>>>>> Stashed changes
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
