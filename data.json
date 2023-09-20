@@ -8298,6 +8298,7 @@
       "userId": 2,
       "id": 8
     },
+<<<<<<< Updated upstream
     {
       "productDetails": {
         "classDetails": {
@@ -8323,6 +8324,9 @@
       "userId": 2,
       "id": 11
     },
+=======
+    
+>>>>>>> Stashed changes
     {
       "productDetails": {
         "classDetails": {
@@ -8346,14 +8350,24 @@
       "className": "Class-2",
       "quantity": 2,
       "userId": 3,
+<<<<<<< Updated upstream
       "id": 12
+<<<<<<< HEAD
+=======
+=======
+      "id": 10
+>>>>>>> adea2d223251d235360f3bf0c185bf4bfcf4c542
     },
     {
       "productDetails": {
         "classDetails": {
           "class": "Class 2",
           "book": {
+<<<<<<< HEAD
             "title": "SST Book for Class 2",
+=======
+            "title": "Hindi Book for Class 2",
+>>>>>>> adea2d223251d235360f3bf0c185bf4bfcf4c542
             "images": [
               "https://i.dummyjson.com/data/products/1/1.jpg",
               "https://i.dummyjson.com/data/products/1/2.jpg",
@@ -8365,6 +8379,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "publisherName": "Publisher D",
       "publisherId": "4",
       "subjectName": "SST (Social Studies)",
@@ -8467,6 +8482,16 @@
         "pincode": "110002"
       },
       "status": "pending"
+=======
+      "publisherName": "Publisher B",
+      "publisherId": "2",
+      "subjectName": "Hindi",
+      "className": "Class-2",
+      "quantity": 1,
+      "userId": 2,
+      "id": 11
+>>>>>>> Stashed changes
+>>>>>>> adea2d223251d235360f3bf0c185bf4bfcf4c542
     }
   ]
 }

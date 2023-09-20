@@ -27,7 +27,13 @@ export function fetchItemByUserId(user) {
 
 export function updateCart(update) {
   return new Promise(async (resolve, reject) => {
+<<<<<<< Updated upstream
     const response = await fetch('http://localhost:8080/cart/'+update.id, {
+=======
+    console.log('update', update.userId)
+    console.log('update', update)
+    const response = await fetch('http://localhost:8080/cart'+ update.userId, {
+>>>>>>> Stashed changes
       method: 'PATCH',
       body: JSON.stringify(update),
       headers: { 'content-type': 'application/json' }

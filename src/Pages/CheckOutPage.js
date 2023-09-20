@@ -95,7 +95,6 @@ const CheckOutPage = () => {
         dispatch(deleteItemFromCartAsync(itemId))
     }
     const onSubmit = (data) => {
-       
         console.log(data);
         dispatch(updateUserAsync({...user.data, addresses:[...user.data.addresses, data]}))
         reset();

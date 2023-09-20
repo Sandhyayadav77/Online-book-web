@@ -102,7 +102,8 @@ export const addToCartSlice = createSlice({
         state.status = 'idle';
         const index = state.items.findIndex((item => item.id === action.payload.id))
         state.items[index] = action.payload;
-      }).addCase(deleteItemFromCartAsync.pending, (state) => {
+      })
+      .addCase(deleteItemFromCartAsync.pending, (state) => {
         state.status = 'loading';
       })
       .addCase(deleteItemFromCartAsync.fulfilled, (state, action) => {
@@ -113,7 +114,7 @@ export const addToCartSlice = createSlice({
         state.status = 'loading';
       }).addCase(resetCartAsync.fulfilled, (state) => {
         state.status = 'idle';
-        state.items= [];
+        state.items = [];
       });
   },
 });
