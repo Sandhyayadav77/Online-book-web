@@ -7,6 +7,7 @@ import fetchProductDetailsReducer from '../features/ProductDetails/ProductDetail
 import authReducer from '../features/auth/authSlice'
 import cartReducer from '../features/cart/CartSlice'
 import orderReducer from '../features/Order/orderSlice'
+import userReducer from '../features/user/userSlice'
 export const store = configureStore({
   reducer: {
     publisher: publisherReducer,
@@ -16,6 +17,7 @@ export const store = configureStore({
     auth: authReducer,
     cart:cartReducer,
     order:orderReducer,
+    user:userReducer, 
     middleware: [thunk]
   },
 });

@@ -70,6 +70,7 @@ const CheckOutPage = () => {
     const [selectAddress, setSelectAddress] = useState(null);
     const [paymentMethod, setPaymentMethod] = useState('cash');
     const user = useSelector(selectLoggedInUser)
+    const userData = { ...user.data }
     const {
         register,
         handleSubmit,
@@ -96,34 +97,37 @@ const CheckOutPage = () => {
     }
     const onSubmit = (data) => {
         console.log(data);
-        dispatch(updateUserAsync({...user.data, addresses:[...user.data.addresses, data]}))
+        dispatch(updateUserAsync({ ...user.data, addresses: [...user.data.addresses, data] }))
         reset();
     };
-    const handleAddress=(e)=>{
+    const handleAddress = (e) => {
         console.log(e.target.value)
         setSelectAddress(user.data.addresses[e.target.value]);
         // console.log(selectAddress)
     }
-    const handlePayment=(e)=>{
+    const handlePayment = (e) => {
         console.log(e.target.value)
         setPaymentMethod(e.target.value);
         // console.log(selectAddress)
     }
-    const handleOrder = (e)=>{
-      if(selectAddress && paymentMethod) {
-        const order = {items, 
-            totalAmount, 
-            totalItems, 
-            ...user.data,
-             paymentMethod, 
-             selectAddress,
-            status:'pending'};
-       dispatch(createOrderAsync(order));
-    //    TODO Redirection to success page
-    // clear cart after order
-      }else{
-          alert("Enter Address and Payment Method")
-      }
+    const handleOrder = (e) => {
+        if (selectAddress && paymentMethod) {
+            const order = {
+                items,
+                totalAmount,
+                totalItems,
+                userData,
+                paymentMethod,
+                selectAddress,
+                status: 'pending'
+            };
+            console.log(order)
+            dispatch(createOrderAsync(order));
+            //    TODO Redirection to success page
+            // clear cart after order
+        } else {
+            alert("Enter Address and Payment Method")
+        }
     }
     return (
         <>
@@ -198,7 +202,7 @@ const CheckOutPage = () => {
                                 </div>
 
 
-                            
+
                                 <div className="col-span-full">
                                     <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
                                         Street address
@@ -210,7 +214,7 @@ const CheckOutPage = () => {
                                             id="street-address"
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
-                                           {errors.street && <p className='text-red-500'>{errors.street.message}</p>}
+                                        {errors.street && <p className='text-red-500'>{errors.street.message}</p>}
                                     </div>
                                 </div>
 
@@ -226,7 +230,7 @@ const CheckOutPage = () => {
                                             autoComplete="address-level2"
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
-                                           {errors.city && <p className='text-red-500'>{errors.city.message}</p>}
+                                        {errors.city && <p className='text-red-500'>{errors.city.message}</p>}
                                     </div>
                                 </div>
 
@@ -240,7 +244,7 @@ const CheckOutPage = () => {
                                             {...register("state", { required: "State is required" })}
                                             id="state"
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />   
+                                        />
                                         {errors.state && <p className='text-red-500'>{errors.state.message}</p>}
                                     </div>
                                 </div>
@@ -256,7 +260,7 @@ const CheckOutPage = () => {
                                             id="pin-code"
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
-                                           {errors.pincode && <p className='text-red-500'>{errors.pincode.message}</p>}
+                                        {errors.pincode && <p className='text-red-500'>{errors.pincode.message}</p>}
                                     </div>
                                     <div className="mt-6 flex items-center justify-end gap-x-6">
                                         <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
@@ -283,7 +287,7 @@ const CheckOutPage = () => {
                                     <li key={index} htmlFor={address.pincode} className="flex justify-between gap-x-6 py-5 px-2 rounded-sm">
                                         <div className="flex min-w-0 gap-x-4">
                                             <input
-                                            onChange={handleAddress}
+                                                onChange={handleAddress}
                                                 id={address.pincode}
                                                 name="address"
                                                 type="radio"
@@ -311,14 +315,14 @@ const CheckOutPage = () => {
                                     <legend className="text-sm font-semibold leading-6 text-gray-900">Payment Method</legend>
                                     <p className="mt-1 text-sm leading-6 text-gray-600">Choose One</p>
                                     <div className="mt-6 space-y-6">
-                                    <div className="flex items-center gap-x-3">
+                                        <div className="flex items-center gap-x-3">
                                             <input
                                                 id="cash"
                                                 name="paymemts"
                                                 onChange={handlePayment}
                                                 type="radio"
                                                 value='cash'
-                                                checked={paymentMethod==='cash'}
+                                                checked={paymentMethod === 'cash'}
                                                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                             />
                                             <label htmlFor="push-email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -331,13 +335,13 @@ const CheckOutPage = () => {
                                                 onChange={handlePayment}
                                                 type="radio"
                                                 value='card'
-                                                checked={paymentMethod==='card'}
+                                                checked={paymentMethod === 'card'}
                                                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                             />
                                             <label htmlFor="push-everything" className="block text-sm font-medium leading-6 text-gray-900">
                                                 Credit Card                                            </label>
                                         </div>
-                                       
+
                                         {/* <div className="flex items-center gap-x-3">
                                             <input
                                                 id="upi"
@@ -436,7 +440,7 @@ const CheckOutPage = () => {
                                 <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                 <div className="mt-6">
                                     <div
-                                    onClick={handleOrder}
+                                        onClick={handleOrder}
                                         className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                                     >
                                         Order now

@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { resetCart } from '../features/cart/CartAPI'
 import { selectLoggedInUser } from '../features/auth/authSlice'
 import { resetOrder } from '../features/Order/orderSlice'
+import { resetCartAsync } from '../features/cart/CartSlice'
 
 const OrderSuccessPage = () => {
     const user = useSelector(selectLoggedInUser)
-    const userData= {...user.data}
     // console.log(user)
     // console.log(user?.data?.id)
     const params = useParams()
@@ -20,7 +19,7 @@ const OrderSuccessPage = () => {
 
 useEffect(() => {
     if (user && user.data && user.data.id) {
-        dispatch(resetCart(user.data.id));
+        dispatch( resetCartAsync(user.data.id));
         dispatch(resetOrder());
         console.log(user.data.id);
     }

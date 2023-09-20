@@ -15,6 +15,7 @@ import { selectLoggedInUser } from './features/auth/authSlice';
 import { fetchItemByUserIdAsync } from './features/cart/CartSlice';
 import PageNotFound from './Pages/404';
 import OrderSuccessPage from './Pages/OrderSuccessPage';
+import UserOrders from './features/user/components/UserOrders';
 
 function App() {
   const user = useSelector(selectLoggedInUser)
@@ -39,6 +40,7 @@ function App() {
           <Route path="checkout" exact element={<Protected><CheckOutPage /></Protected>} />
           <Route path="/class-category/:publisherName/:id/:subjectName" exact element={<Protected><ByClassPage /></Protected>} />
           <Route path="/product-details/:publisherName/:id/:subjectName/:className" exact element={<Protected><ProductetailsPage /></Protected>} />
+          <Route path="/orders" exact element={<Protected><UserOrders /></Protected>} />
           <Route path="*"  element={<PageNotFound/>} />
         </Routes>
       </BrowserRouter>

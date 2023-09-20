@@ -114,8 +114,8 @@ export function ParticularPublication() {
           </h2>
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {publicationSubjects.map((subject) => (
-            <div key={subject.id} className="group relative">
+            {publicationSubjects.map((subject, index) => (
+            <div key={index} className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <img
                     src={subject.imageSrc}

@@ -16,14 +16,14 @@ export  function CreateUser(userData) {
 
 export  function checkUser(loginInfo) {
   return new Promise( async(resolve, reject)=>{
-    console.log(loginInfo)
+    // console.log(loginInfo)
     const email= loginInfo.email;
     const password= loginInfo.password
     const url ='http://localhost:8080/users?email='+email
-    console.log(url)
+    // console.log(url)
     const response = await fetch(url);
     const data = await response.json()
-    console.log({data})
+    // console.log({data})
     if(data.length){
       if(password=== data[0].password){
         resolve({data: data[0]})

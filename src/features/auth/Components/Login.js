@@ -26,7 +26,7 @@ export function Login() {
   //     .catch((error) => {
   //       dispatch(setError(error.message)); // Replace with your Redux action to set the error message
   //     })
-  console.log(errors)
+  // console.log(errors)
 
   return (
     <>

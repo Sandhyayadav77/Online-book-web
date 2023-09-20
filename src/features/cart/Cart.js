@@ -18,7 +18,6 @@ export function Cart() {
  const totalAmount = items.reduce((amount, item) => {
   // console.log(item)
   const price = parseFloat( item?.productDetails?.classDetails?.book?.price?.replace(/[^0-9.]/g, ''));
-  console.log('price', price)
   return price * item.quantity + amount;
 }, 0);
   const totalItems= items.reduce((total, item)=> item.quantity + total,0)

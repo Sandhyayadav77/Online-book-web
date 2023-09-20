@@ -143,7 +143,7 @@ export function ProductDetails() {
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
               <img
-                src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[0]}
+                src={ProductDetails.classDetails && ProductDetails.classDetails.book && ProductDetails.classDetails.book.images[3]}
                 // alt={product.images[0].alt}
                 className="h-full w-full object-cover object-center"
               />
