@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useForm, SubmitHandler } from "react-hook-form"
 import { selectLoggedInUser, updateUserAsync } from '../features/auth/authSlice';
 import { createOrderAsync, selectCurrentOrder } from '../features/Order/orderSlice';
+import { selectUserInfo } from '../features/user/userSlice';
 
 
 const products = [
@@ -69,8 +70,10 @@ const products = [
 const CheckOutPage = () => {
     const [selectAddress, setSelectAddress] = useState(null);
     const [paymentMethod, setPaymentMethod] = useState('cash');
-    const user = useSelector(selectLoggedInUser)
-    const userData = { ...user.data }
+    // const user = useSelector(selectLoggedInUser)
+    const user = useSelector(selectUserInfo)
+    console.log('checkout',user)
+    const userData = { ...user }
     const {
         register,
         handleSubmit,
@@ -94,15 +97,18 @@ const CheckOutPage = () => {
     }
     const handleRemove = (e, itemId) => {
         dispatch(deleteItemFromCartAsync(itemId))
-    }
+    };
     const onSubmit = (data) => {
         console.log(data);
-        dispatch(updateUserAsync({ ...user.data, addresses: [...user.data.addresses, data] }))
+        const updatedAddresses = [...user.addresses, data]; // Concatenate the new address to the existing array
+        const updatedUser = { ...user, addresses: updatedAddresses };
+        console.log(updatedUser);
+        dispatch(updateUserAsync(updatedUser));
         reset();
     };
     const handleAddress = (e) => {
         console.log(e.target.value)
-        setSelectAddress(user.data.addresses[e.target.value]);
+        setSelectAddress(user.addresses[e.target.value]);
         // console.log(selectAddress)
     }
     const handlePayment = (e) => {
@@ -283,7 +289,7 @@ const CheckOutPage = () => {
                                 Choose from existing address
                             </p>
                             <ul role="list" className="divide-y divide-gray-400">
-                                {user?.data?.addresses?.map((address, index) => (
+                                {user?.addresses?.map((address, index) => (
                                     <li key={index} htmlFor={address.pincode} className="flex justify-between gap-x-6 py-5 px-2 rounded-sm">
                                         <div className="flex min-w-0 gap-x-4">
                                             <input

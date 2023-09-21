@@ -15,7 +15,11 @@ import { selectLoggedInUser } from './features/auth/authSlice';
 import { fetchItemByUserIdAsync } from './features/cart/CartSlice';
 import PageNotFound from './Pages/404';
 import OrderSuccessPage from './Pages/OrderSuccessPage';
-import UserOrders from './features/user/components/UserOrders';
+import UserOrderPage from './Pages/UserOrderPage';
+import UserProfilePage from './Pages/UserProfilePage';
+import { fetchLoggedInUserAsync } from './features/user/userSlice';
+import Logout from './features/auth/Components/Logout';
+import ForgotPasswordPage from './Pages/ForgotPasswordPage';
 
 function App() {
   const user = useSelector(selectLoggedInUser)
@@ -23,6 +27,7 @@ function App() {
   useEffect(() => {
     if (user) {
       dispatch(fetchItemByUserIdAsync(user))
+      dispatch(fetchLoggedInUserAsync(user?.data?.id))
     }
   }, [dispatch, user])
 
@@ -40,7 +45,10 @@ function App() {
           <Route path="checkout" exact element={<Protected><CheckOutPage /></Protected>} />
           <Route path="/class-category/:publisherName/:id/:subjectName" exact element={<Protected><ByClassPage /></Protected>} />
           <Route path="/product-details/:publisherName/:id/:subjectName/:className" exact element={<Protected><ProductetailsPage /></Protected>} />
-          <Route path="/orders" exact element={<Protected><UserOrders /></Protected>} />
+          <Route path="/orders" exact element={<Protected><UserOrderPage /></Protected>} />
+          <Route path="/profile" exact element={<Protected><UserProfilePage/></Protected>} />
+          <Route path="/logout" exact element={<Logout/>} />
+          <Route path="/forgot-password" exact element={<ForgotPasswordPage/>} />
           <Route path="*"  element={<PageNotFound/>} />
         </Routes>
       </BrowserRouter>

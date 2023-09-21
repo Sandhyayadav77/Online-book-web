@@ -39,17 +39,10 @@ export  function checkUser(loginInfo) {
 }
 
 
-export  function updateUser(update) {
+export  function signOut(userId) {
   return new Promise( async(resolve)=>{
-    const updateUserId = update.id
-    console.log(updateUserId)
-    const response = await fetch('http://localhost:8080/users/'+updateUserId, {
-      method:'PATCH',
-      body:JSON.stringify(update),
-      headers:{'content-type':'application/json'}
-    });
-    const data = await response.json()
-    // on server it will return only relevant information 
-    resolve({data})
+
+    // on server it willremove the  user session info 
+  resolve({data:'success on sign out'})
   } )
 }
