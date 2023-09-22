@@ -26,6 +26,7 @@ export function ByClass() {
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
+  console.log('classesForSubject', classesForSubject)
   return (
     <>
       <div className="bg-white">
@@ -37,7 +38,7 @@ export function ByClass() {
                 <Link to={`/product-details/${publisherName}/${id}/${subjectName}/${(product.class).split(' ').join('-')}`}>
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                     <img
-                      src={product.imageSrc}
+                      src={product.book.byClassSubjectImageSrc}
                       alt={product.imageAlt}
                       className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                     />

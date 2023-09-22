@@ -1,5 +1,6 @@
-import React, {  useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StarIcon } from '@heroicons/react/20/solid'
+import { RadioGroup } from '@headlessui/react'
 import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchProductDetailsAsync,
@@ -72,11 +73,11 @@ export function ProductDetails() {
   const ProductDetails = useSelector(selectfetchProductDetails);
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser)
-  // console.log(user)
+  console.log(user)
   useEffect(() => {
     dispatch(fetchProductDetailsAsync({ id, publisherName, subjectName, className }))
   }, [id, publisherName, subjectName, className]);
-  // console.log(ProductDetails)
+  console.log(ProductDetails)
   // const price = ProductDetails.classDetails.book.price;
   // console.log(price);
   const handleCart = async (e) => {
@@ -95,7 +96,7 @@ export function ProductDetails() {
       // Add item to the cart here
       dispatch(addToCartAsync(cartItem));
     
-    // console.log('Item added to cart:', cartItem);
+    console.log('Item added to cart:', cartItem);
   } catch (error) {
     console.error("An error occurred while adding to the cart:", error);
     // Handle the error gracefully, e.g., show an error message

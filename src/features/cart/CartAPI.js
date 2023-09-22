@@ -61,7 +61,7 @@ export function deleteItemFromCart(itemId) {
 
       if (response.status === 404) {
         // Handle the case where the item was not found
-        console.log(`Item with ID ${itemId} not found.`);
+        // console.log(`Item with ID ${itemId} not found.`);
       } else {
         const data = await response.json();
         // Handle the successful deletion

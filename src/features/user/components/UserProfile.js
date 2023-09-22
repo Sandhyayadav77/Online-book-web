@@ -23,7 +23,7 @@ export function UserProfile() {
   const handleEdit = (addressUpdate, index) => {
     const newUser = { ...user, addresses: [...user.addresses] }
     newUser.addresses.splice(index, 1, addressUpdate);
-    console.log(newUser)
+    // console.log(newUser)
     dispatch(updateUserAsync(newUser));
   }
   const handleRemove = (e, index) => {
@@ -234,10 +234,10 @@ export function UserProfile() {
           <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
             <p className="mt-0.5 text-sm text-gray-500">Your Address</p>
             {user?.addresses.map((address, index) => (
-              <div>
+              <div key={index}>
                 {selectedEditIndex === index ?
                   <form noValidate onSubmit={handleSubmit(data => {
-                    console.log(data);
+                    // console.log(data);
                     handleEdit(data, index);
                   })}>
                     <div className="border-b border-gray-900/10 pb-12">

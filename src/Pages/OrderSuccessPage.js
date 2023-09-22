@@ -21,7 +21,7 @@ useEffect(() => {
     if (user && user.data && user.data.id) {
         dispatch( resetCartAsync(user.data.id));
         dispatch(resetOrder());
-        console.log(user.data.id);
+        // console.log(user.data.id);
     }
 }, [dispatch, user]);
 

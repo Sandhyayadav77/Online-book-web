@@ -72,7 +72,7 @@ const CheckOutPage = () => {
     const [paymentMethod, setPaymentMethod] = useState('cash');
     // const user = useSelector(selectLoggedInUser)
     const user = useSelector(selectUserInfo)
-    console.log('checkout',user)
+    // console.log('checkout',user)
     const userData = { ...user }
     const {
         register,
@@ -84,7 +84,7 @@ const CheckOutPage = () => {
     const dispatch = useDispatch();
     const items = useSelector(selectItems);
     const currentOrder = useSelector(selectCurrentOrder)
-    console.log(currentOrder)
+    // console.log(currentOrder)
     const [open, setOpen] = useState(true)
 
     const totalAmount = items.reduce((amount, item) => {
@@ -99,15 +99,15 @@ const CheckOutPage = () => {
         dispatch(deleteItemFromCartAsync(itemId))
     };
     const onSubmit = (data) => {
-        console.log(data);
+        // console.log(data);
         const updatedAddresses = [...user.addresses, data]; // Concatenate the new address to the existing array
         const updatedUser = { ...user, addresses: updatedAddresses };
-        console.log(updatedUser);
+        // console.log(updatedUser);
         dispatch(updateUserAsync(updatedUser));
         reset();
     };
     const handleAddress = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setSelectAddress(user.addresses[e.target.value]);
         // console.log(selectAddress)
     }
@@ -127,7 +127,7 @@ const CheckOutPage = () => {
                 selectAddress,
                 status: 'pending'
             };
-            console.log(order)
+            // console.log(order)
             dispatch(createOrderAsync(order));
             //    TODO Redirection to success page
             // clear cart after order

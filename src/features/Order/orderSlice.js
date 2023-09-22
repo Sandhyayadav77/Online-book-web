@@ -11,7 +11,7 @@ const initialState = {
 export const createOrderAsync = createAsyncThunk(
   'order/createOrder',
   async (order) => {
-    console.log(order)
+    // console.log(order)
     const response = await createOrder(order);
     // The value we return becomes the `fulfilled` action payload
     return response.data;
@@ -37,7 +37,8 @@ export const orderSlice = createSlice({
         state.status = 'idle';
         state.orders.push(action.payload);
         state.currentOrder= action.payload
-        console.log('Updated currentOrder:', state.currentOrder , action); // Log the updated currentOrder
+        // console.log('Updated currentOrder:', state.currentOrder , action);
+         // Log the updated currentOrder
       });
   },
 });

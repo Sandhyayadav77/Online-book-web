@@ -19,7 +19,18 @@ export const SignUp = memo(() => {
     } = useForm();
 
     const onSubmit = (data) => {
-        dispatch(CreateUserAsync({ name: data.name, email: data.email, phone: data.phone, school_Name: data.schoolName, password: data.password , addresses:[]}))
+        dispatch(CreateUserAsync(
+            {
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                school_Name: data.schoolName,
+                password: data.password,
+                addresses: [], 
+                role :'user'
+            // this role can be directly given on backend 
+            }
+        ))
         console.log(data);
     };
     console.log(errors)

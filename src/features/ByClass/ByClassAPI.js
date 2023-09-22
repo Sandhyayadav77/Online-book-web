@@ -8,9 +8,9 @@ export function fetchClassesForSubjectAPI(publisherName, publisherId, subjectNam
     const publisher = data.find((p) => p.id == Number(publisherId));
     if (publisher) {
       const subject = publisher.subjects.find((s) => s.name === subjectName);
-      console.log(publisher);
+      // console.log(publisher);
       if (subject) {
-        console.log( { classes: subject.classes })
+        // console.log( { classes: subject.classes })
         resolve({ classes: subject.classes });
       } else {
         resolve({ classes: [] }); // Subject not found for this publisher

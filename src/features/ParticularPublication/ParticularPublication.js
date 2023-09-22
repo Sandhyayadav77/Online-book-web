@@ -105,6 +105,7 @@ export function ParticularPublication() {
   if (status === 'failed') {
     return <div>Error: {error}</div>;
   }
+  console.log(publicationSubjects)
   return (
     <>
       <div className="bg-white">
