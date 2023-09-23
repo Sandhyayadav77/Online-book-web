@@ -5,10 +5,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchProductDetailsAsync,
   selectfetchProductDetails,
-} from './ProductDetailsSlice';
+} from '../../ProductDetails/ProductDetailsSlice';
 import { useParams } from 'react-router-dom';
-import { addToCartAsync } from '../cart/CartSlice';
-import { selectLoggedInUser } from '../auth/authSlice'
+import { addToCartAsync } from '../../cart/CartSlice';
+import { selectLoggedInUser } from '../../auth/authSlice'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -68,7 +68,7 @@ const reviews = { href: '#', average: 4, totalCount: 117 }
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-export function ProductDetails() {
+export function AdminProductDetails() {
   const { publisherName, id, subjectName, className } = useParams()
   const ProductDetails = useSelector(selectfetchProductDetails);
   const dispatch = useDispatch();

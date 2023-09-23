@@ -4,17 +4,14 @@ import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outl
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectItems } from '../cart/CartSlice'
+import { selectLoggedInUser } from '../auth/authSlice'
+import {RiAccountCircleLine} from 'react-icons/ri'
 
-const user = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
-    imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
+
 const navigation = [
-    { name: 'Dashboard', href: '/', current: true },
-    { name: 'Login', href: '/login', current: false },
-    { name: 'Sign Up', href: '/signup', current: false },
+    { name: 'Dashboard', link: '/', user: true },
+//   { name: 'Team', link: '#', user: true },
+  { name: 'Admin', link: '/admin', admin: true },
 
 ]
 const userNavigation = [
@@ -28,7 +25,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar({ Children }) {
-    const items= useSelector(selectItems)
+    const items = useSelector(selectItems)
+    const user = useSelector(selectLoggedInUser)
     return (
         <>
 
@@ -48,24 +46,28 @@ export default function Navbar({ Children }) {
                                         </div>
                                         <div className="hidden md:block">
                                             <div className="ml-10 flex items-baseline space-x-4">
-                                                {navigation.map((item) => (
-                                                    <a
-                                                        key={item.name}
-                                                        href={item.href}
-                                                        className={classNames(
-                                                            item.current
-                                                                ? 'bg-gray-900 text-white'
-                                                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                            'rounded-md px-3 py-2 text-sm font-medium'
-                                                        )}
-                                                        aria-current={item.current ? 'page' : undefined}
-                                                    >
-                                                        {item.name}
-                                                    </a>
-                                                ))}
+
+                                                {navigation.map((item) =>
+                                                    item[user?.data.role] ? (
+                                                        <Link
+                                                            key={item.name}
+                                                            to={item.link}
+                                                            className={classNames(
+                                                                item.current
+                                                                    ? 'bg-gray-900 text-white'
+                                                                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                                'rounded-md px-3 py-2 text-sm font-medium'
+                                                            )}
+                                                            aria-current={item.current ? 'page' : undefined}
+                                                        >
+                                                            {item.name}
+                                                        </Link>
+                                                    ) : null
+                                                )}
                                             </div>
                                         </div>
                                     </div>
+                                    <Link to="/bag" className='text-white'>Create a Bag</Link>
                                     <div className="hidden md:block">
                                         <div className="ml-4 flex items-center md:ml-6">
                                             <Link to='/cart'>
@@ -76,7 +78,7 @@ export default function Navbar({ Children }) {
                                                     <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                                                 </button>
                                             </Link>
-                                         {  items.length > 0 && <span className="inline-flex items-center mb-7 -ml-2 rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                                            {items.length > 0 && <span className="inline-flex items-center mb-7 -ml-2 rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
                                                 {items.length}
                                             </span>}
 
@@ -86,7 +88,8 @@ export default function Navbar({ Children }) {
                                                     <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                                         <span className="absolute -inset-1.5" />
                                                         <span className="sr-only">Open user menu</span>
-                                                        <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                                                        {/* <img className="h-8 w-8 rounded-full" src={user?.imageUrl} alt="" /> */}
+                                                        <RiAccountCircleLine className='text-white' size={30}/>
                                                     </Menu.Button>
                                                 </div>
                                                 <Transition
@@ -154,11 +157,13 @@ export default function Navbar({ Children }) {
                                 <div className="border-t border-gray-700 pb-3 pt-4">
                                     <div className="flex items-center justify-between px-5">
                                         <div className="flex-shrink-0">
-                                            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                                            {/* <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" /> */}
+                                            <RiAccountCircleLine className='text-white' size={30}/>
+
                                         </div>
                                         <div className="ml-3">
-                                            <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                                            <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                                            <div className="text-base font-medium leading-none text-white">{user?.data.name}</div>
+                                            <div className="text-sm font-medium leading-none text-gray-400">{user?.data.email}</div>
                                         </div>
                                         <Link to='/cart'>
                                             <button
@@ -167,7 +172,7 @@ export default function Navbar({ Children }) {
                                                 <span className="absolute -inset-1.5" />
                                                 <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                                             </button>
-                                         { items.length > 0 &&  <span className="inline-flex items-center  -ml-2 mb-1 absolute top-[223px] rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                                            {items.length > 0 && <span className="inline-flex items-center  -ml-2 mb-1 absolute top-[223px] rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
                                                 {items.length}
                                             </span>}
                                         </Link>

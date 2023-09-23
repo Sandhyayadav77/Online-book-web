@@ -58,6 +58,8 @@ export function UserProfile() {
           <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
             <h1 className="text-lg font-medium text-gray-900">Name:  {user?.name.slice(0, 1).toUpperCase() + user?.name.slice(1)} </h1>
             <br />
+           {user?.role ==='admin' &&  <h1 className="text-lg font-medium text-gray-900 pb-2">Role:  {user?.role} </h1>
+           }
             <h1 className="text-base font-medium text-gray-900">Email address: {user?.email}</h1>
           </div>
           <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
