@@ -169,6 +169,7 @@ export function Cart() {
     // Function to extract cart information from the URL
     const extractCartFromURL = () => {
       const queryParams = new URLSearchParams(location.search);
+      console.log('queryParams', queryParams)
       const newCartItems = [];
       for (const [key, value] of queryParams.entries()) {
         if (key.startsWith('product_')) {

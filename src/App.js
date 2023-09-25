@@ -63,7 +63,7 @@ function App() {
           <Route path="/orders" exact element={<Protected><UserOrderPage /></Protected>} />
           <Route path="/profile" exact element={<Protected><UserProfilePage/></Protected>} />
           <Route path="/logout" exact element={<Logout/>} />
-          <Route path="/admin/product-form" exact element={<AdminProductFormPage />} />
+          <Route path="/admin/product-form" exact element={<Protected><AdminProductFormPage /></Protected>} />
           <Route path="/forgot-password" exact element={<ForgotPasswordPage/>} />
           <Route path="/bag" exact element={<Bag />} />
           <Route path="*"  element={<PageNotFound/>} />

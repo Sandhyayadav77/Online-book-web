@@ -23,11 +23,11 @@ export default function AdminProductsList() {
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-7 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="text-3xl mb-6 text-center font-bold ">Publication Houses</h2>
-          {/* <Link>
+          <Link to='/admin/product-form'>
             <div className='flex justify-center items-center '>
-              <button className='px-3 py-[6px] rounded-md bg-green-600 txt-sm font-semibold text-white mb-6 '>Add New Product</button>
+              <button className='px-3 py-[6px] rounded-md bg-green-700 txt-sm font-semibold text-white mb-6 '>Add New Product</button>
             </div>
-          </Link> */}
+          </Link>
           <div className="publisher-list grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {publishers.map((publisher) => (
               <div>
